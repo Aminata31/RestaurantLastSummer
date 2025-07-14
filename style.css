@@ -1,0 +1,88 @@
+/*style pour l'image */
+img {
+    max-width: 100%;
+    height: auto;
+    }
+html{
+    background-color: rgb(174, 170, 206);
+header{
+
+      text-align: center;
+      padding: 10px;
+      margin: 10px
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(174, 170, 206);
+ }
+body{
+    border-radius: 15px;
+}
+
+section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px;
+        background-color: rgb(235, 174, 84);
+        border-radius: 10px;
+  }
+
+  h2{ text-align:center;
+  }
+  table{
+     border-collapse: collapse;
+     width: 100%;
+     text-align: center;
+ }
+ ul {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+footer {
+    background-color: #9997bd;
+    color: rgb(82, 56, 177);
+    padding: 10px;
+    text-align: center;
+}
+footer a {
+    color:#8590c4 ;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #9997bd;
+    text-decoration: underline;
+}
+/* styles pour la page A propos */.hero{
+    text-align: ;
+    padding: 40px 20px;
+    background: color #f9f9f9; ; /* couleur de fond claire*/}
+    .hero hl {
+        margin-bottom: 15px;
+    .equipe {
+        padding: 30px 20px;
+    .membre equipe {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    .membre {
+        text-align: center;
+        margin-bottom: 30px;
+        max-width: 300px; /*ajuster la largeur selon vos besoins */
+    }
+    .membre img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .valeurs ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+    .valeurs li {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    
