@@ -4,17 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservation - Last Summer</title>
+    <!-- Le lien vers votre fichier de style externe est conservé -->
     <link rel="stylesheet" href="style.css">
-    </head>
+    
+    <!-- ********** CSS INTÉGRÉ pour le message de confirmation ********** -->
+    <style>
+        /* Style de base pour l'alignement de la section de réservation */
+        .reservation-form-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Conteneur de formulaire pour une meilleure organisation */
+        .reservation-form {
+            width: 100%;
+            max-width: 500px; /* Ajusté pour une meilleure lisibilité */
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 10px; /* Coins plus arrondis */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Amélioration du style des groupes de formulaire (form-group) */
+        .form-group {
+            margin-bottom: 18px; /* Léger ajustement de l'espacement */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px; /* Espace entre le label et l'input */
+            font-weight: bold;
+            color: #333; /* Couleur de texte plus foncée */
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* S'assure que le padding n'augmente pas la largeur totale */
+            font-size: 16px;
+        }
+        
+        /* Message de confirmation (caché par défaut) */
+        #confirmationMessage {
+            display: none; /* Cache le message initialement */
+            width: 100%;
+            max-width: 600px;
+            background-color: #d4edda; /* Vert clair de succès */
+            color: #155724; /* Texte vert foncé */
+            border: 1px solid #c3e6cb;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        #confirmationMessage h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #28a745; /* Vert plus vif pour le titre */
+        }
+
+        #confirmationMessage p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Style du bouton d'accueil dans le message de confirmation */
+        .btn-accueil {
+            display: inline-block; 
+            margin-top: 25px; 
+            padding: 12px 25px; 
+            background-color: #007bff; /* Bleu primaire */
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-accueil:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Classe utilitaire pour masquer les infos de réservation */
+        .reservation-info.hidden {
+            display: none;
+        }
+    </style>
+</head>
 <body>
     <header>
         <nav>
             <ul>
-               <li><a href="index.html"><Accueil</a></li>
-                 <li><a href="menu.html"><Menu</a></li>
-                 <li><a href="a propos.html"><a propos</li>
-                 <li><a href="contact.html"><contact</a></li>
-                 <li><a href="reservation.html">Reservation</a></li>
+               <li><a href="index.html">Accueil</a></li>
+                 <li><a href="menu.html">Menu</a></li>
+                 <li><a href="a propos.html">À propos</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="reservation.html">Réservation</a></li>
             </ul>
         </nav>
     </header>
@@ -26,8 +119,10 @@
         </section>
 
         <section class="reservation-form-section">
-            <h2>Formulaire de Réservation</h2>
-            <form action="traitement_reservation.php" method="POST" class="reservation-form">
+            
+            <h2 id="formTitle">Formulaire de Réservation</h2>
+            <!-- AJOUT de l'ID "reservationForm" : CRUCIAL pour le JavaScript -->
+            <form id="reservationForm" class="reservation-form"> 
                 <div class="form-group">
                     <label for="nom">Nom :</label>
                     <input type="text" id="nom" name="nom" required>
@@ -52,9 +147,13 @@
                     <label for="heure">Heure :</label>
                     <select id="heure" name="heure" required>
                         <option value="">Sélectionnez une heure</option>
+                        <!-- Heures de service du soir -->
                         <option value="19:00">19:00</option>
                         <option value="19:30">19:30</option>
                         <option value="20:00">20:00</option>
+                        <option value="20:30">20:30</option>
+                        <option value="21:00">21:00</option>
+                        <option value="21:30">21:30</option>
                         </select>
                 </div>
                 <div class="form-group">
@@ -67,7 +166,20 @@
                 </div>
                 <button type="submit" class="btn-submit">Réserver ma Table</button>
             </form>
-            <div class="reservation-info">
+
+            <!-- ********** POINT D'INSERTION : Message de Confirmation (Initialement caché) ********** -->
+            <div id="confirmationMessage">
+                <h2>🎉 Réservation Réussie, <span id="clientName"></span> !</h2>
+                <p>Merci beaucoup ! Votre demande de réservation a été enregistrée.</p>
+                <p>Une confirmation détaillée avec tous les renseignements vous sera envoyée par email à l'adresse fournie.</p>
+                <a href="index.html" class="btn-accueil">
+                    Retourner à l'Accueil
+                </a>
+            </div>
+            <!-- ****************************************************************************************** -->
+
+            <!-- AJOUT de l'ID "reservationInfo" pour le masquer en JS -->
+            <div id="reservationInfo" class="reservation-info"> 
                 <h3>Nos Horaires de Réservation</h3>
                 <p>Du Lundi au Dimanche : 12h00 - 14h30 et 19h00 - 22h30</p>
                 
@@ -80,5 +192,52 @@
     <footer>
         <p>&copy; 2025 Last Summer. Tous droits réservés.</p>
     </footer>
+
+    <!-- ********** CODE JAVASCRIPT : Le Répondeur (Placé en fin de corps) ********** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélection des éléments du DOM
+            const form = document.getElementById('reservationForm');
+            const messageContainer = document.getElementById('confirmationMessage');
+            const clientNameSpan = document.getElementById('clientName');
+            const infoContainer = document.getElementById('reservationInfo');
+            const formTitle = document.getElementById('formTitle'); // Sélection du titre du formulaire
+
+            if (form) {
+                // Écoute de l'événement 'submit' du formulaire
+                form.addEventListener('submit', function(event) {
+                    // Empêche le rechargement de la page
+                    event.preventDefault(); 
+                    
+                    // Récupération du prénom pour personnaliser le message
+                    const prenomInput = document.getElementById('prenom');
+                    const prenom = prenomInput.value ? prenomInput.value : 'Cher client';
+
+                    // Mise à jour du message de succès avec le prénom
+                    clientNameSpan.textContent = prenom;
+
+                    // Masquer les éléments non nécessaires
+                    form.style.display = 'none';
+                    if (infoContainer) {
+                        infoContainer.classList.add('hidden'); // Utiliser la classe CSS pour masquer
+                    }
+                    if (formTitle) {
+                        formTitle.style.display = 'none'; // Masquer aussi le titre "Formulaire de Réservation"
+                    }
+                    
+                    // Afficher le message de confirmation
+                    messageContainer.style.display = 'block';
+
+                    // Défilement vers le haut pour montrer le message immédiatement
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    // NOTE : C'est ici que vous placeriez votre code 'fetch' 
+                    // pour envoyer les données à un serveur (comme votre .php) 
+                    // avant d'afficher le succès.
+                });
+            }
+        });
+    </script>
+    <!-- ******************************************************************************* -->
 </body>
 </html>
