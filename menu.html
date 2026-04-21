@@ -29,13 +29,18 @@
             <p>Une sélection de plats de saison, préparés avec amour et authenticité.</p>
         </div>
     </section>
+<div class="menu-filtres container">
+        <button class="btn-filtre actif" data-filter="tout">Tout</button>
+        <button class="btn-filtre" data-filter="entrees">Entrées</button>
+        <button class="btn-filtre" data-filter="plats">Plats</button>
+        <button class="btn-filtre" data-filter="desserts">Desserts</button>
+    </div>
 
     <main class="menu-contenu container">
         
-        <section class="menu-categorie">
+        <section class="menu-categorie" data-categorie="entrees">
             <h2>Pour Commencer</h2>
             <div class="menu-grille">
-                
                 <div class="menu-item">
                     <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1969&auto=format&fit=crop" alt="Tomates Mozzarella">
                     <div class="item-details">
@@ -44,7 +49,6 @@
                     </div>
                     <div class="item-prix">12 €</div>
                 </div>
-
                 <div class="menu-item">
                     <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=2080&auto=format&fit=crop" alt="Gaspacho">
                     <div class="item-details">
@@ -53,14 +57,12 @@
                     </div>
                     <div class="item-prix">9 €</div>
                 </div>
-
             </div>
         </section>
 
-        <section class="menu-categorie">
+        <section class="menu-categorie" data-categorie="plats">
             <h2>Les Plats</h2>
             <div class="menu-grille">
-                
                 <div class="menu-item">
                     <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop" alt="Daurade">
                     <div class="item-details">
@@ -69,7 +71,6 @@
                     </div>
                     <div class="item-prix">24 €</div>
                 </div>
-
                 <div class="menu-item">
                     <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?q=80&w=2024&auto=format&fit=crop" alt="Pâtes Citron">
                     <div class="item-details">
@@ -78,7 +79,20 @@
                     </div>
                     <div class="item-prix">18 €</div>
                 </div>
+            </div>
+        </section>
 
+        <section class="menu-categorie" data-categorie="desserts">
+            <h2>Douceurs</h2>
+            <div class="menu-grille">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1571115177098-24c42d5e056a?q=80&w=2000&auto=format&fit=crop" alt="Tiramisu">
+                    <div class="item-details">
+                        <h3>Tiramisu aux Fraises</h3>
+                        <p>Mascarpone léger, biscuits cuillère, fraises fraîches et coulis.</p>
+                    </div>
+                    <div class="item-prix">10 €</div>
+                </div>
             </div>
         </section>
 
