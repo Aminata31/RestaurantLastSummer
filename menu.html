@@ -2,55 +2,43 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MENU | LAST SUMMER</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">LAST SUMMER</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">LOCATIONS</a></li>
-                    <li><a href="menu.html">ORDER</a></li>
-                    <li><a href="reservation.html">CATERING</a></li>
-                    <li><a href="contact.html">PRESS</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">LAST SUMMER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="reservation.html">RÉSERVER</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
     </header>
 
-    <main class="hero-text">
-        <p class="tagline">OUR SELECTIONS</p>
-        <h1 style="font-size: 6vw;">THE MENU</h1>
-        
-        <div class="menu-list" style="max-width: 800px; margin: 60px auto; text-align: left; padding: 0 20px;">
-            <div class="menu-category" style="margin-bottom: 50px;">
-                <h3 style="border-bottom: 4px solid #000; padding-bottom: 10px; margin-bottom: 20px;">SINE-SALOUM GRILL</h3>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span>FALAFEL PLATE</span> <span>12.00</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span>GRILLED FISH OF THE DAY</span> <span>18.50</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span>CHICKEN SHEWARMA</span> <span>14.00</span>
+    <section class="page-hero hero-menu">
+        <h1>LE MENU</h1>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">ENTRÉES</h3>
+                    <div class="menu-list-item"><span>Falafels du Saloum</span> <span>4500 FCFA</span></div>
+                    <div class="menu-list-item"><span>Houmous maison</span> <span>3500 FCFA</span></div>
                 </div>
             </div>
-
-            <div class="menu-category">
-                <h3 style="border-bottom: 4px solid #000; padding-bottom: 10px; margin-bottom: 20px;">SIDES & DRINKS</h3>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span>HUMMUS & PITA</span> <span>8.00</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-                    <span>FRESH BISSAU JUICE</span> <span>4.00</span>
+            <div class="card">
+                <div class="card-body">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">PLATS SIGNATURES</h3>
+                    <div class="menu-list-item"><span>Thiéboudieune revisité</span> <span>8500 FCFA</span></div>
+                    <div class="menu-list-item"><span>Grillade de Poisson</span> <span>9500 FCFA</span></div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
+    <footer>© 2026 LAST SUMMER — SÉNÉGAL</footer>
 </body>
 </html>
