@@ -1,30 +1,37 @@
-/* RESET ET VARIABLES */
+/* =========================================
+   1. RESET ET VARIABLES (Look Chaleureux)
+   ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --couleur-fond: #fdfaf5; /* Un crème chaleureux au lieu du blanc froid */
-    --couleur-accent: #d35400; /* Un orange terre cuite pour le peps */
+    --couleur-fond: #fdfaf5; /* Crème chaleureux */
+    --couleur-accent: #d35400; /* Terre cuite */
     --couleur-texte: #2c3e50;
+    --blanc: #ffffff;
 }
 
 body {
-    font-family: 'Playfair Display', serif, Arial; /* Une police plus élégante pour restaurant */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: var(--couleur-fond);
     color: var(--couleur-texte);
     line-height: 1.6;
+    text-align: center;
 }
 
-/* HEADER CHALEUREUX */
+/* =========================================
+   2. HEADER ET NAVIGATION
+   ========================================= */
 .main-header {
     padding: 40px 20px;
-    background-color: white;
+    background-color: var(--blanc);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo h1 {
-    font-size: 2.5rem;
-    letter-spacing: 5px;
+    font-size: 2.2rem;
+    letter-spacing: 6px;
     color: var(--couleur-accent);
+    font-weight: 300;
 }
 
 nav ul {
@@ -38,12 +45,17 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: var(--couleur-texte);
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 0.85rem;
     letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-/* SECTION HERO AVEC PLUS DE VIE */
+nav ul li a:hover { color: var(--couleur-accent); }
+
+/* =========================================
+   3. SECTION HERO ET BOUTONS
+   ========================================= */
 .hero {
     padding: 60px 20px;
     max-width: 1100px;
@@ -51,9 +63,17 @@ nav ul li a {
 }
 
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #1a1a1a;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .btn-primary {
@@ -61,98 +81,74 @@ nav ul li a {
     color: white;
     padding: 15px 40px;
     text-decoration: none;
-    border-radius: 50px; /* Bouton arrondi plus accueillant */
+    border-radius: 50px;
     font-weight: bold;
     display: inline-block;
+    margin-top: 20px;
     transition: 0.3s;
+    border: none;
 }
 
-.btn-primary:hover {
-    transform: scale(1.05);
-    background-color: #e67e22;
-}
+.btn-primary:hover { transform: scale(1.05); background-color: #e67e22; }
+.btn-primary:active { transform: scale(0.95); }
 
-/* FORMAT CONTACT MODERNE */
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding: 40px;
-    background: white;
-    border-radius: 15px;
-    margin: 40px auto;
-    max-width: 900px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.contact-info { text-align: left; }
-.contact-info h3 { color: var(--couleur-accent); margin-bottom: 15px; }
-
-/* IMAGES */
-.food-item img {
-    border-radius: 15px; /* On arrondit les angles des photos pour plus de douceur */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-/* --- STYLE RÉSERVATION & CONTACT --- */
-
-.form-section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
+/* =========================================
+   4. RÉSERVATION ET CONTACT (Les Formulaires)
+   ========================================= */
+.form-section { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
 
 .card-container {
-    background: white;
+    background: var(--blanc);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    border: 1px solid #f0f0f0;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
     text-align: left;
 }
 
-.form-group {
-    margin-bottom: 25px;
-}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-.form-group.full-width {
-    grid-column: span 2;
-}
+.form-group { margin-bottom: 20px; }
+.form-group.full-width { grid-column: span 2; }
 
 .form-group label {
     display: block;
     font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-weight: bold;
     margin-bottom: 8px;
-    color: var(--couleur-accent); /* Utilise la couleur orange terre cuite */
+    color: var(--couleur-accent);
 }
 
-.form-group input, 
-.form-group select, 
-.form-group textarea {
+.form-group input, .form-group select, .form-group textarea {
     width: 100%;
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #eee;
     border-radius: 8px;
     background-color: #f9f9f9;
-    font-family: inherit;
-    transition: 0.3s;
 }
 
-.form-group input:focus {
-    outline: none;
-    border-color: var(--couleur-accent);
-    background-color: #fff;
+/* Grille Contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
 }
 
-/* Version mobile de la grille */
-@media (max-width: 600px) {
-    .form-grid { grid-template-columns: 1fr; }
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.main-footer {
+    padding: 60px 20px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-grid, .contact-container { grid-template-columns: 1fr; }
     .form-group.full-width { grid-column: span 1; }
+    nav ul { flex-direction: column; gap: 10px; }
 }
