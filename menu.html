@@ -2,44 +2,93 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>MENU | LAST SUMMER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Carte | Restaurant Last Summer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">LAST SUMMER</div>
-        <ul class="nav-links">
-            <li><a href="index.html">ACCUEIL</a></li>
-            <li><a href="menu.html">MENU</a></li>
-            <li><a href="reservation.html">RÉSERVER</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
+
+    <header class="header-epure header-sombre">
+        <div class="container nav-container">
+            <div class="logo-sombre">Last Summer.</div>
+            <nav>
+                <ul class="nav-liens liens-sombres">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="menu.html" class="actif">La Carte</a></li>
+                    <li><a href="concept.html">Le Concept</a></li>
+                    <li><a href="contact.html">Réserver</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-  <section class="hero-page bg-menu">
-    <h1>NOTRE CARTE</h1>
-    <p>Des saveurs authentiques du Saloum</p>
-</section>
-
-    <div class="container">
-        <div class="grid">
-            <div class="card">
-                <div class="card-body">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">ENTRÉES</h3>
-                    <div class="menu-list-item"><span>Falafels du Saloum</span> <span>4500 FCFA</span></div>
-                    <div class="menu-list-item"><span>Houmous maison</span> <span>3500 FCFA</span></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3 style="color: var(--primary); margin-bottom: 20px;">PLATS SIGNATURES</h3>
-                    <div class="menu-list-item"><span>Thiéboudieune revisité</span> <span>8500 FCFA</span></div>
-                    <div class="menu-list-item"><span>Grillade de Poisson</span> <span>9500 FCFA</span></div>
-                </div>
-            </div>
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Notre Carte</h1>
+            <p>Une sélection de plats de saison, préparés avec amour et authenticité.</p>
         </div>
-    </div>
+    </section>
 
-    <footer>© 2026 LAST SUMMER — SÉNÉGAL</footer>
+    <main class="menu-contenu container">
+        
+        <section class="menu-categorie">
+            <h2>Pour Commencer</h2>
+            <div class="menu-grille">
+                
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?q=80&w=1969&auto=format&fit=crop" alt="Tomates Mozzarella">
+                    <div class="item-details">
+                        <h3>Caprese d'Été</h3>
+                        <p>Tomates cœur de bœuf, mozzarella di bufala, pesto de basilic maison.</p>
+                    </div>
+                    <div class="item-prix">12 €</div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=2080&auto=format&fit=crop" alt="Gaspacho">
+                    <div class="item-details">
+                        <h3>Gaspacho Andalou</h3>
+                        <p>Soupe froide de tomates et poivrons rôtis, croûtons à l'ail et huile d'olive.</p>
+                    </div>
+                    <div class="item-prix">9 €</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="menu-categorie">
+            <h2>Les Plats</h2>
+            <div class="menu-grille">
+                
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop" alt="Daurade">
+                    <div class="item-details">
+                        <h3>Daurade Grillée au Feu de Bois</h3>
+                        <p>Pêche du jour, légumes du soleil confits et sauce vierge.</p>
+                    </div>
+                    <div class="item-prix">24 €</div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?q=80&w=2024&auto=format&fit=crop" alt="Pâtes Citron">
+                    <div class="item-details">
+                        <h3>Linguine au Citron d'Amalfi</h3>
+                        <p>Pâtes fraîches, crème au citron, parmesan affiné et basilic.</p>
+                    </div>
+                    <div class="item-prix">18 €</div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-epure">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Restaurant Last Summer. Tous droits réservés.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
