@@ -186,3 +186,64 @@ h1 {
             </div>
         </div>
     </section>
+/* --- Footer --- */
+.footer-epure {
+  border-top: 1px solid var(--border-light); /* Ligne séparatrice très fine */
+  padding: 5rem 0 2rem 0; /* Beaucoup d'espace au-dessus pour respirer */
+  background-color: var(--bg-color);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.footer-col p, 
+.footer-col a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1.8; /* Espace bien les lignes pour la lisibilité */
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: var(--text-main); /* Le texte s'assombrit légèrement au survol */
+}
+
+.social-links {
+  list-style: none; /* Enlève les puces de la liste */
+}
+
+.social-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-bottom p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* --- Responsive Footer (Media Queries) --- */
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr; /* Sur mobile, les colonnes s'empilent (1 seule colonne) */
+    text-align: center; /* Centre le texte sur petit écran */
+    gap: 2rem;
+  }
+}
