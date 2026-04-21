@@ -2,47 +2,36 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RESERVE | LAST SUMMER</title>
+    <title>RÉSERVER | LAST SUMMER</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">LAST SUMMER</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">LOCATIONS</a></li>
-                    <li><a href="menu.html">ORDER</a></li>
-                    <li><a href="reservation.html">CATERING</a></li>
-                    <li><a href="contact.html">PRESS</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">LAST SUMMER</div>
+        <ul class="nav-links">
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="reservation.html">RÉSERVER</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
     </header>
 
-    <main class="hero-text">
-        <p class="tagline">JOIN US</p>
-        <h1 style="font-size: 6vw;">BOOK A TABLE</h1>
-
-        <div style="max-width: 600px; margin: 40px auto; padding: 0 20px;">
-            <form id="reservationForm">
-                <input type="text" placeholder="NAME" style="width:100%; padding:20px; border:2px solid #000; margin-bottom:10px; font-weight:900;">
-                <div style="display: flex; gap: 10px;">
-                    <input type="date" style="width:50%; padding:20px; border:2px solid #000; margin-bottom:10px; font-weight:900;">
-                    <input type="time" style="width:50%; padding:20px; border:2px solid #000; margin-bottom:10px; font-weight:900;">
-                </div>
-                <select style="width:100%; padding:20px; border:2px solid #000; margin-bottom:20px; font-weight:900; appearance: none;">
-                    <option>2 GUESTS</option>
-                    <option>4 GUESTS</option>
-                    <option>6+ GUESTS</option>
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">RÉSERVER</h2>
+        <div class="form-box">
+            <form id="resForm">
+                <label>NOM COMPLET</label>
+                <input type="text" placeholder="Votre nom" required>
+                <label>NOMBRE DE PERSONNES</label>
+                <select>
+                    <option>2 Personnes</option>
+                    <option>4 Personnes</option>
+                    <option>Plus de 6</option>
                 </select>
-                <button type="submit" class="cta-button" style="width:100%; border:none; cursor:pointer;">CONFIRM BOOKING</button>
+                <button type="submit" class="btn-cool" style="width: 100%;">CONFIRMER MA TABLE</button>
             </form>
         </div>
-    </main>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
