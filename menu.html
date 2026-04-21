@@ -103,6 +103,46 @@
             <p>&copy; 2026 Restaurant Last Summer. Tous droits réservés.</p>
         </div>
     </footer>
+<script>
+        // Sélectionne tous les boutons et toutes les catégories du menu
+        const boutonsFiltre = document.querySelectorAll('.btn-filtre');
+        const categoriesMenu = document.querySelectorAll('.menu-categorie');
 
+        // Ajoute un événement "clic" sur chaque bouton
+        boutonsFiltre.forEach(bouton => {
+            bouton.addEventListener('click', () => {
+                
+                // 1. Gérer l'état actif des boutons (couleur et soulignement)
+                boutonsFiltre.forEach(btn => btn.classList.remove('actif')); // Enlève "actif" de tous
+                bouton.classList.add('actif'); // Ajoute "actif" au bouton cliqué
+
+                // 2. Récupérer la valeur du filtre cliqué (ex: "entrees", "plats"...)
+                const filtre = bouton.getAttribute('data-filter');
+
+                // 3. Afficher ou masquer les catégories selon le filtre
+                categoriesMenu.forEach(categorie => {
+                    const typeCategorie = categorie.getAttribute('data-categorie');
+                    
+                    if (filtre === 'tout' || filtre === typeCategorie) {
+                        // Si on clique sur "Tout" ou si la catégorie correspond au bouton
+                        categorie.classList.remove('masque');
+                        // Petit délai pour relancer l'animation d'opacité
+                        setTimeout(() => {
+                            categorie.style.opacity = '1';
+                            categorie.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        // Sinon, on cache la catégorie
+                        categorie.style.opacity = '0';
+                        categorie.style.transform = 'translateY(20px)';
+                        // On attend la fin de l'animation CSS avant de retirer l'élément du flux (display: none)
+                        setTimeout(() => {
+                            categorie.classList.add('masque');
+                        }, 400); 
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
