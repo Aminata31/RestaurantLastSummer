@@ -179,17 +179,52 @@ footer { padding: 50px; text-align: center; color: #aaa; font-size: 0.8rem; }
 .hero-reservation {
     background-image: url('https://images.unsplash.com/photo-1593005574542-a7d0e4a7a8f1?q=80&w=2070&auto=format&fit=crop');
 }
+/* --- PAGE CONTACT IMMERSIVE --- */
 
-/* Arrière-plan pour CONTACT (Le paysage du Sine-Saloum) */
 .hero-contact {
-    background-image: url('https://images.unsplash.com/photo-1602931252089-2900f6b4b45d?q=80&w=2070&auto=format&fit=crop');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070&auto=format&fit=crop'); 
+    /* Image d'une table avec vue, très chaleureux */
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-/* Petite optimisation pour le menu en liste */
-.menu-list-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+.contact-floating-cards {
+    margin-top: -100px; /* Les cartes remontent sur l'image pour l'effet "cool" */
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-15px); /* Effet de flottaison intense */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
 }
