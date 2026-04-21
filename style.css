@@ -1,140 +1,133 @@
-/* RESET MIZLALA STYLE */
+/* RESET COMPLET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-    text-transform: uppercase; /* Tout en majuscules, signature de Mizlala */
-    line-height: 1.5;
-    text-align: center;
-}
-
-/* HEADER & MENUS FLOTTANTS */
-.main-header {
-    padding: 30px 20px;
-    border-bottom: 2px solid #000;
-}
-
-.logo h1 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    font-weight: 900;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    background-color: #fff;
     color: #000;
-    font-weight: bold;
-    font-size: 0.9rem;
+    text-transform: uppercase; /* Signature Mizlala */
     letter-spacing: 1px;
-    display: inline-block;
-    transition: all 0.3s ease;
 }
 
-/* L'effet où le menu "flotte" vers le haut quand on le touche */
-nav ul li a:hover {
-    transform: translateY(-5px);
-    color: #555;
+/* NAVBAR */
+.navbar {
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1000;
 }
 
-/* HERO ET TEXTES */
-.hero {
-    padding: 80px 20px;
-    max-width: 1200px;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.hero h2 {
-    font-size: 3.5rem;
+.logo {
+    font-size: 24px;
     font-weight: 900;
-    margin-bottom: 40px;
-    letter-spacing: -1px;
+    letter-spacing: 4px;
 }
 
-/* BOUTONS QUI FLOTTENT */
-.btn-primary {
-    background-color: #000;
-    color: #fff;
-    padding: 20px 40px;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    display: inline-block;
-    border: 2px solid #000;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #fff;
     color: #000;
-    transform: translateY(-8px); /* Le bouton se soulève */
-    box-shadow: 0 15px 20px rgba(0,0,0,0.1); /* Ombre pour l'effet de flottaison */
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
 }
 
-/* IMAGES BRUTES ET GRANDES */
-.hero-image {
-    overflow: hidden;
-    margin-top: 40px;
+.nav-links a:hover { opacity: 0.5; transform: translateY(-2px); }
+
+/* HERO TEXT */
+.hero-text {
+    padding: 100px 20px;
+    text-align: center;
 }
 
+.tagline {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 8vw; /* Très grand comme sur le site */
+    font-weight: 900;
+    margin-bottom: 20px;
+    line-height: 0.9;
+}
+
+.description {
+    font-size: 14px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-transform: none; /* Plus lisible pour les paragraphes */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.cta-button:hover { background: #fff; color: #000; border: 1px solid #000; }
+
+/* HERO IMAGE */
 .hero-image img {
     width: 100%;
-    height: 600px;
+    height: 80vh;
     object-fit: cover;
-    transition: transform 0.6s ease;
 }
 
-.hero-image:hover img {
-    transform: scale(1.03); /* Zoom très léger et classe */
-}
-
-/* FORMULAIRES MINIMALISTES (Réservation & Contact) */
-.form-section { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
-
-.form-grid {
+/* GRID FAVORITES */
+.favorites-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: left;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
 }
 
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+.grid-item {
+    position: relative;
+    overflow: hidden;
 }
 
-.form-group input, .form-group select, .form-group textarea {
+.grid-item img {
     width: 100%;
-    padding: 20px;
-    border: 2px solid #000;
-    background-color: #fff;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-/* Effet quand on clique dans un champ */
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    background-color: #f4f4f4;
-    transform: translateX(5px);
+.grid-item:hover img { transform: scale(1.05); }
+
+.grid-item p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
 }
 
-.contact-info {
-    text-align: left;
-    margin-top: 40px;
-    border-top: 2px solid #000;
-    padding-top: 20px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Cache le menu sur mobile pour simplifier */
+    h1 { font-size: 15vw; }
+    .favorites-grid { grid-template-columns: 1fr; }
 }
