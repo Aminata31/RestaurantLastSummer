@@ -1,56 +1,10 @@
-/* --- CONFIGURATION & COULEURS --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- PAGE CONTACT IMMERSIVE --- */
 
-:root {
-    --primary: #ff5e3a; /* Corail dynamique */
-    --dark: #1a1a1a;
-    --light: #fcfcfc;
-    --shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--light);
-    color: var(--dark);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* --- NAVIGATION (EFFET FLOU & FLOTTANT) --- */
-.navbar {
-    padding: 20px 50px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-}
-
-.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: 2px; }
-
-.nav-links { display: flex; list-style: none; gap: 30px; }
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 700;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-    transform: translateY(-3px);
-    color: var(--primary);
-}
-
-/* --- STYLE DES BANNIÈRES (HERO) --- */
-
-.hero-page {
-    height: 60vh; /* Hauteur de la bannière */
+.hero-contact {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070&auto=format&fit=crop'); 
+    /* Image d'une table avec vue, très chaleureux */
+    height: 60vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -58,128 +12,41 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    text-align: center;
+}
+
+.contact-floating-cards {
+    margin-top: -100px; /* Les cartes remontent sur l'image pour l'effet "cool" */
     position: relative;
-}
-
-/* Le voile sombre pour que le texte soit lisible sur l'image */
-.hero-page::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-}
-
-.hero-page h1, .hero-page p {
-    position: relative;
-    z-index: 2; /* Pour passer devant le voile sombre */
-}
-
-/* --- IMAGES PAR PAGE --- */
-
-/* Accueil : Image d'ambiance générale */
-.bg-index { background-image: url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070'); }
-
-/* Menu : Gros plan sur un plat appétissant */
-.bg-menu { background-image: url('https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=2070'); }
-
-/* Réservation : Image d'une table dressée, chaleureuse */
-.bg-reservation { background-image: url('https://images.unsplash.com/photo-1550966842-28c2e2ad2640?q=80&w=2070'); }
-
-/* Contact : Vue du restaurant ou du paysage (Sine-Saloum) */
-.bg-contact { background-image: url('https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070'); }
-
-.btn-cool:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 94, 58, 0.4);
-}
-
-/* --- GRILLE DE CARTES (MENU & PLATS) --- */
-.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-
-.grid {
+    z-index: 10;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
 }
 
-.card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.4s ease;
-    text-align: left;
-}
-
-.card:hover { transform: translateY(-15px); }
-
-.card img { width: 100%; height: 250px; object-fit: cover; }
-
-.card-body { padding: 25px; }
-
-/* --- FORMULAIRES --- */
-.form-box {
+.contact-card {
     background: white;
     padding: 40px;
-    border-radius: 25px;
-    box-shadow: var(--shadow);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background: #f9f9f9;
-}
-
-/* --- FOOTER --- */
-footer { padding: 50px; text-align: center; color: #aaa; font-size: 0.8rem; }
-
-@media (max-width: 768px) {
-    .navbar { padding: 20px; }
-    .nav-links { display: none; }
-    .hero h1 { font-size: 2.5rem; }
-}
-/* =========================================
-   AJOUTS POUR ARRIÈRES-PLANS DES PAGES
-   ========================================= */
-
-/* Classe générale pour les bannières de page (Héros secondaires) */
-.page-hero {
-    height: 50vh; /* Moins haut que l'accueil, pour montrer le contenu vite */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
     text-align: center;
-    position: relative;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-/* Le calque d'assombrissement (Overlay) obligatoire pour la lisibilité */
-.page-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Assombrit l'image de 40% */
-    z-index: 1;
+.contact-card:hover {
+    transform: translateY(-15px); /* Effet de flottaison intense */
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
-.page-hero h1 {
-    font-size: 4rem;
-    font-weight: 900;
-    position: relative;
-    z-index: 2; /* Passe au-dessus du calque */
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
 }
-
 /* --- IMAGES SPÉCIFIQUES --- */
 
 /* Arrière-plan pour MENU (Un festin coloré) */
