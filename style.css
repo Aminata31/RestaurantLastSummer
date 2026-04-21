@@ -341,3 +341,47 @@ h1 {
 
 </body>
 </html>
+/* --- Boutons de Filtre --- */
+.menu-filtres {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap; /* Permet de passer à la ligne sur mobile si besoin */
+}
+
+.btn-filtre {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent; /* Prépare la bordure pour l'état actif */
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-filtre:hover {
+  color: var(--text-main);
+}
+
+.btn-filtre.actif {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color); /* Ligne terracotta sous le bouton actif */
+  font-weight: 600;
+}
+
+/* --- Classes d'animation pour le JavaScript --- */
+.menu-categorie {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Cette classe sera ajoutée par le JavaScript pour cacher les éléments */
+.masque {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
