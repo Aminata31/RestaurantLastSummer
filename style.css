@@ -1,3 +1,15 @@
+/* --- Correctif universel : à ajouter tout en haut du fichier CSS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Force TOUTES les images à ne JAMAIS dépasser de leur conteneur */
+img {
+    max-width: 100%;
+    height: auto;
+}
 /* --- Variables & Reset --- */
 :root {
   --bg-color: #FAFAFA; /* Blanc cassé très léger */
