@@ -161,3 +161,8 @@ nav ul li a:hover { color: #888; }
     nav ul { flex-direction: column; gap: 15px; }
     .hero-image img { height: 400px; }
 }
+/* Style Formulaire Reservation */
+.form-container { max-width: 500px; margin: 0 auto; padding: 40px 20px; text-align: left; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 5px; font-weight: 600; }
+.form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #e0e0e0; font-family: inherit; }
