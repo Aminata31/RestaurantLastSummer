@@ -1,236 +1,26 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation - Last Summer</title>
-    <!-- Le lien vers votre fichier de style externe est conservé -->
-    <link rel="stylesheet" href="style.css">
+<main class="hero">
+    <p class="subtitle">RÉSERVER</p>
+    <h2>Une table au bord de l'eau</h2>
     
-    <!-- ********** CSS INTÉGRÉ pour le message de confirmation ********** -->
-    <style>
-        /* Style de base pour l'alignement de la section de réservation */
-        .reservation-form-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Conteneur de formulaire pour une meilleure organisation */
-        .reservation-form {
-            width: 100%;
-            max-width: 500px; /* Ajusté pour une meilleure lisibilité */
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 10px; /* Coins plus arrondis */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Amélioration du style des groupes de formulaire (form-group) */
-        .form-group {
-            margin-bottom: 18px; /* Léger ajustement de l'espacement */
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 6px; /* Espace entre le label et l'input */
-            font-weight: bold;
-            color: #333; /* Couleur de texte plus foncée */
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; /* S'assure que le padding n'augmente pas la largeur totale */
-            font-size: 16px;
-        }
-        
-        /* Message de confirmation (caché par défaut) */
-        #confirmationMessage {
-            display: none; /* Cache le message initialement */
-            width: 100%;
-            max-width: 600px;
-            background-color: #d4edda; /* Vert clair de succès */
-            color: #155724; /* Texte vert foncé */
-            border: 1px solid #c3e6cb;
-            padding: 30px;
-            margin-top: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        #confirmationMessage h2 {
-            font-size: 2.2em;
-            margin-bottom: 15px;
-            color: #28a745; /* Vert plus vif pour le titre */
-        }
-
-        #confirmationMessage p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        /* Style du bouton d'accueil dans le message de confirmation */
-        .btn-accueil {
-            display: inline-block; 
-            margin-top: 25px; 
-            padding: 12px 25px; 
-            background-color: #007bff; /* Bleu primaire */
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-accueil:hover {
-            background-color: #0056b3;
-        }
-        
-        /* Classe utilitaire pour masquer les infos de réservation */
-        .reservation-info.hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <section>
-            <h1>Réservez Votre Table</h1>
-            <p>Nous sommes impatients de vous accueillir au Last Summer !</p>
-        </section>
-
-        <section class="reservation-form-section">
-            
-            <h2 id="formTitle">Formulaire de Réservation</h2>
-            <!-- AJOUT de l'ID "reservationForm" : CRUCIAL pour le JavaScript -->
-            <form id="reservationForm" class="reservation-form"> 
-                <div class="form-group">
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom" required>
-                </div>
-                <div class="form-group">
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="telephone">Téléphone :</label>
-                    <input type="tel" id="telephone" name="telephone">
-                </div>
-                <div class="form-group">
-                    <label for="date">Date :</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="heure">Heure :</label>
-                    <select id="heure" name="heure" required>
-                        <option value="">Sélectionnez une heure</option>
-                        <!-- Heures de service -->
-                         <option value="12:00">12:00</option>
-                         <option value="13:00">13:00</option>
-                         <option value="14:00">14:00</option>
-                         <option value="15:00">15:00</option>
-                         <option value="16:00">16:00</option>
-                         <option value="17:00">17:00</option>
-                         <option value="18:00">18:00</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                        <option value="21:00">21:00</option>
-                        <option value="21:30">22:00</option>
-                        </select>
-                </div>
-                <div class="form-group">
-                    <label for="personnes">Nombre de personnes :</label>
-                    <input type="number" id="personnes" name="personnes" min="1" max="10" value="2" required>
-                </div>
-                <div class="form-group">
-                    <label for="commentaires">Requêtes spéciales :</label>
-                    <textarea id="commentaires" name="commentaires" rows="4"></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Réserver ma Table</button>
-            </form>
-
-            <!-- ********** POINT D'INSERTION : Message de Confirmation (Initialement caché) ********** -->
-            <div id="confirmationMessage">
-                <h2>🎉 Réservation Réussie, <span id="clientName"></span> !</h2>
-                <p>Merci beaucoup ! Votre demande de réservation a été enregistrée.</p>
-                <p>Une confirmation détaillée avec tous les renseignements vous sera envoyée par email à l'adresse fournie.</p>
-                <a href="index.html" class="btn-accueil">
-                    Retourner à l'Accueil
-                </a>
+    <div class="form-container">
+        <form>
+            <div class="form-group">
+                <label>NOM COMPLET</label>
+                <input type="text" placeholder="Votre nom">
             </div>
-            <!-- ****************************************************************************************** -->
-
-            <!-- AJOUT de l'ID "reservationInfo" pour le masquer en JS -->
-            <div id="reservationInfo" class="reservation-info"> 
-                <h3>Nos Horaires de Réservation</h3>
-                <p>Du Lundi au Dimanche : 12h00 - 14h30 et 19h00 - 22h30</p>
-                
-                <h3>À Savoir</h3>
-                <p>Une confirmation vous sera envoyée par email. En cas de non-présentation 15 minutes après l'heure de réservation, votre table pourra être réattribuée.</p>
+            <div class="form-group">
+                <label>DATE & HEURE</label>
+                <input type="datetime-local">
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Last Summer. Tous droits réservés.</p>
-    </footer>
-
-    <!-- ********** CODE JAVASCRIPT : Le Répondeur (Placé en fin de corps) ********** -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Sélection des éléments du DOM
-            const form = document.getElementById('reservationForm');
-            const messageContainer = document.getElementById('confirmationMessage');
-            const clientNameSpan = document.getElementById('clientName');
-            const infoContainer = document.getElementById('reservationInfo');
-            const formTitle = document.getElementById('formTitle'); // Sélection du titre du formulaire
-
-            if (form) {
-                // Écoute de l'événement 'submit' du formulaire
-                form.addEventListener('submit', function(event) {
-                    // Empêche le rechargement de la page
-                    event.preventDefault(); 
-                    
-                    // Récupération du prénom pour personnaliser le message
-                    const prenomInput = document.getElementById('prenom');
-                    const prenom = prenomInput.value ? prenomInput.value : 'Cher client';
-
-                    // Mise à jour du message de succès avec le prénom
-                    clientNameSpan.textContent = prenom;
-
-                    // Masquer les éléments non nécessaires
-                    form.style.display = 'none';
-                    if (infoContainer) {
-                        infoContainer.classList.add('hidden'); // Utiliser la classe CSS pour masquer
-                    }
-                    if (formTitle) {
-                        formTitle.style.display = 'none'; // Masquer aussi le titre "Formulaire de Réservation"
-                    }
-                    
-                    // Afficher le message de confirmation
-                    messageContainer.style.display = 'block';
-
-                    // Défilement vers le haut pour montrer le message immédiatement
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    
-                    // NOTE : C'est ici que vous placeriez votre code 'fetch' 
-                    // pour envoyer les données à un serveur (comme votre .php) 
-                    // avant d'afficher le succès.
-                });
-            }
-        });
-    </script>
-    <!-- ******************************************************************************* -->
-</body>
-</html>
+            <div class="form-group">
+                <label>NOMBRE DE PERSONNES</label>
+                <select>
+                    <option>2 Personnes</option>
+                    <option>4 Personnes</option>
+                    <option>Plus de 6</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">CONFIRMER</button>
+        </form>
+    </div>
+</main>
