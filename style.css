@@ -134,3 +134,62 @@ footer { padding: 50px; text-align: center; color: #aaa; font-size: 0.8rem; }
     .nav-links { display: none; }
     .hero h1 { font-size: 2.5rem; }
 }
+/* =========================================
+   AJOUTS POUR ARRIÈRES-PLANS DES PAGES
+   ========================================= */
+
+/* Classe générale pour les bannières de page (Héros secondaires) */
+.page-hero {
+    height: 50vh; /* Moins haut que l'accueil, pour montrer le contenu vite */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Le calque d'assombrissement (Overlay) obligatoire pour la lisibilité */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Assombrit l'image de 40% */
+    z-index: 1;
+}
+
+.page-hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    position: relative;
+    z-index: 2; /* Passe au-dessus du calque */
+}
+
+/* --- IMAGES SPÉCIFIQUES --- */
+
+/* Arrière-plan pour MENU (Un festin coloré) */
+.hero-menu {
+    background-image: url('https://images.unsplash.com/photo-1606854425890-b3b44b8b6f3a?q=80&w=2070&auto=format&fit=crop');
+}
+
+/* Arrière-plan pour RÉSERVATION (Un intérieur calme et invitant) */
+.hero-reservation {
+    background-image: url('https://images.unsplash.com/photo-1593005574542-a7d0e4a7a8f1?q=80&w=2070&auto=format&fit=crop');
+}
+
+/* Arrière-plan pour CONTACT (Le paysage du Sine-Saloum) */
+.hero-contact {
+    background-image: url('https://images.unsplash.com/photo-1602931252089-2900f6b4b45d?q=80&w=2070&auto=format&fit=crop');
+}
+
+/* Petite optimisation pour le menu en liste */
+.menu-list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
