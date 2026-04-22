@@ -579,12 +579,16 @@ button[type="submit"] {
         padding: 2rem 1.5rem;
     }
 /* --- Mise à jour Page Réservation (Pep's & Fond Sine Saloum) --- */
-
 .contact-section {
-  padding: 10rem 0; /* Un peu plus d'espace pour l'image */
-  /* NOUVELLE IMAGE DE FOND : Le Sine Saloum vibrant (générée par Gemini) */
+  padding: 10rem 0; 
+  /* J'ai inséré l'Option 1 ici : */
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                    url('https://image.pollinations.ai/prompt/A%20wide-angle%2C%20atmospheric%20photo%20of%20the%20Sine%20Saloum%20delta%20in%20Senegal%20at%20sunset.%20Brightly%20colored%20traditional%20Senegalese%20pirogues%20(canoes)%20are%20tied%20up%20on%20the%20calm%2C%20turquoise%20water.%20The%20background%20is%20dense%20green%20mangrove%20forests%20under%20a%20warm%2C%20golden%20and%20orange%20sky%20filled%20with%20soft%20clouds.%20The%20lighting%20is%20golden%20hour%2C%20casting%20long%20reflections.%20High%20resolution%2C%20vibrant%20colors.%20--ar%2016%3A9');
+                    url('https://images.unsplash.com/photo-1599700346065-27a3a8e986a4?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Petit effet de mouvement cool au scroll */
