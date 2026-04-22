@@ -578,14 +578,13 @@ button[type="submit"] {
     .contact-formulaire {
         padding: 2rem 1.5rem;
     }
-}
-/* --- Mise à jour Page Réservation (Couleur & Fond Sine Saloum) --- */
+/* --- Mise à jour Page Réservation (Pep's & Fond Sine Saloum) --- */
 
 .contact-section {
   padding: 10rem 0; /* Un peu plus d'espace pour l'image */
   /* NOUVELLE IMAGE DE FOND : Le Sine Saloum vibrant (générée par Gemini) */
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                    url('https://image.pollinations.ai/prompt/A%20wide-angle%2C%20atmospheric%20photo%20of%20the%20Sine%20Saloum%20delta%20in%20Senegal%20at%20sunset.%20Brightly%20colored%20traditional%20Senegalese%20pirogues%20(canoes)%20are%20tied%20up%20on%20the%20calm%2C%20turquoise%20water.%20The%20background%20is%20dense%20green%20mangrove%20forests%20under%20a%20warm%2C%20golden%20and%20orange%20sky%20filled%20with%20soft%20clouds.%20The%20lighting%20is%20golden%20hour%2C%20casting%2 long%20reflections.%20High%20resolution%2C%20vibrant%20colors.%20--ar%2016%3A9');
+                    url('https://image.pollinations.ai/prompt/A%20wide-angle%2C%20atmospheric%20photo%20of%20the%20Sine%20Saloum%20delta%20in%20Senegal%20at%20sunset.%20Brightly%20colored%20traditional%20Senegalese%20pirogues%20(canoes)%20are%20tied%20up%20on%20the%20calm%2C%20turquoise%20water.%20The%20background%20is%20dense%20green%20mangrove%20forests%20under%20a%20warm%2C%20golden%20and%20orange%20sky%20filled%20with%20soft%20clouds.%20The%20lighting%20is%20golden%20hour%2C%20casting%20long%20reflections.%20High%20resolution%2C%20vibrant%20colors.%20--ar%2016%3A9');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Petit effet de mouvement cool au scroll */
@@ -603,13 +602,13 @@ button[type="submit"] {
 .contact-formulaire {
   background-color: rgba(255, 255, 255, 0.9); /* Translucide */
   backdrop-filter: blur(5px); /* Floute l'image derrière le formulaire */
-  color: var(--text-main); /* Le texte dans le formulaire reste noir pour la lisibilité */
+  color: var(--text-main); /* Le texte dans le formulaire reste noir */
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre portée */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée plus forte */
 }
 
 /* Le bouton : LE PEP'S (Orange vibrant) */
-.btn-principal {
+.contact-formulaire button[type="submit"] {
   background-color: #E67E22; /* Burnt Orange - Pep's mais traditionnel */
   color: white;
   border: none;
@@ -617,13 +616,14 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-.btn-principal:hover {
+.contact-formulaire button[type="submit"]:hover {
   background-color: #D35400; /* Version plus sombre au survol */
 }
 
-/* Responsive (Mobile) - Ajustement */
+/* Responsive (Mobile) - Ajustement pour les petits écrans */
 @media screen and (max-width: 768px) {
     .contact-section {
         background-attachment: scroll; /* Moins lourd sur mobile */
+        padding: 5rem 0;
     }
 }
