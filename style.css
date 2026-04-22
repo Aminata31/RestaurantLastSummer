@@ -770,3 +770,16 @@ button[type="submit"] {
         padding: 2rem 1.5rem;
     }
 }
+/* --- CORRECTION DES COULEURS (FORCER LE TEXTE SOMBRE) --- */
+.contact-info h1, 
+.contact-info p, 
+.info-bloc h3, 
+.info-bloc p {
+    color: #2C3E50 !important; /* Ce !important oblige le navigateur à écouter cette règle */
+}
+
+/* Pour le menu de navigation sur la page contact */
+.header-sombre .logo-sombre,
+.nav-liens.liens-sombres a {
+    color: #2C3E50 !important; 
+}
