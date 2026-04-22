@@ -668,19 +668,54 @@ button[type="submit"] {
   box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3); /* Lueur orange autour du bouton */
 }
 
-/* Responsive pour les téléphones */
-@media screen and (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-    }
-    .contact-section {
-        padding: 4rem 1.5rem;
-    }
-}
-/* --- Page Contact & Réservation --- */
+/* --- Mode Sombre pour la Page Réservation --- */
+
 .contact-section {
     padding: 8rem 0;
+    background-color: #121212 !important; /* Un noir profond pour faire ressortir le blanc */
+    color: #ffffff !important;
+}
+
+/* On s'assure que tous les textes d'info sont bien en blanc */
+.contact-info h1, 
+.contact-info p, 
+.info-bloc h3, 
+.info-bloc p {
+    color: #ffffff !important;
+}
+
+/* Le formulaire : on le garde un peu plus clair pour le relief */
+.contact-formulaire {
+    background-color: #1e1e1e !important; 
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Les labels du formulaire (Nom, Date, etc.) en blanc */
+.contact-formulaire label {
+    color: #ffffff !important;
+}
+
+/* Les champs de saisie (input) */
+.contact-formulaire input, 
+.contact-formulaire select, 
+.contact-formulaire textarea {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: white;
+}
+
+/* On garde notre bouton Orange pour le Pep's ! */
+.contact-formulaire button[type="submit"] {
+    background-color: #E67E22;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .contact-grid {
