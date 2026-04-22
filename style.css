@@ -578,11 +578,9 @@ button[type="submit"] {
     .contact-formulaire {
         padding: 2rem 1.5rem;
     }
-/* --- Mode Sombre pour la Page Réservation --- */
-
 .contact-section {
     padding: 8rem 0;
-    background-color: #121212 !important; /* Un noir profond pour faire ressortir le blanc */
+    background-color: #E97D63 !important; /* Un orange corail profond pour faire ressortir le blanc */
     color: #ffffff !important;
 }
 
