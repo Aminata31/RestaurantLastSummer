@@ -2,45 +2,107 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>CONTACT | LAST SUMMER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver | Restaurant Last Summer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">LAST SUMMER</div>
-        <ul class="nav-links">
-            <li><a href="index.html">ACCUEIL</a></li>
-            <li><a href="menu.html">MENU</a></li>
-            <li><a href="reservation.html">RÉSERVER</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
+
+    <header class="header-epure header-sombre">
+        <div class="container nav-container">
+            <div class="logo-sombre">Last Summer.</div>
+            <nav>
+                <ul class="nav-liens liens-sombres">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="menu.html">La Carte</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html" class="actif">Réserver</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero-contact">
-        <p style="letter-spacing: 3px; font-weight: 700; font-size: 0.8rem;">S'ÉCRIRE OU NOUS VOIR</p>
-        <h1 style="font-size: 4rem; font-weight: 900;">RESTONS EN CONTACT</h1>
-    </section>
+    <main class="contact-section container">
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <h1>Venez partager un moment.</h1>
+                <p>Réservez votre table pour découvrir les saveurs authentiques du Sine Saloum. Pour les tables de plus de 6 personnes, merci de nous contacter directement par téléphone.</p>
+                
+                <div class="info-bloc">
+                    <h3>Notre Adresse</h3>
+                    <p>123 Avenue de la Plage<br>75000 Ville d'Été</p>
+                </div>
+                
+                <div class="info-bloc">
+                    <h3>Nous Contacter</h3>
+                    <p>Téléphone : 01 23 45 67 89<br>Email : reservation@lastsummer.com</p>
+                </div>
+            </div>
 
-    <div class="contact-floating-cards">
-        <div class="contact-card">
-            <span style="font-size: 2rem;">📍</span>
-            <h3 style="margin-bottom: 10px; letter-spacing: 1px;">LOCALISATION</h3>
-            <p style="color: #666; text-transform: none;">Sine-Saloum, Sénégal<br>Delta du Saloum</p>
+            <div class="contact-formulaire">
+                <form action="#" method="POST">
+                    <div class="form-groupe">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-groupe">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-groupe">
+                            <label for="heure">Heure</label>
+                            <select id="heure" name="heure" required>
+                                <option value="">Choisir...</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-groupe">
+                        <label for="personnes">Nombre de personnes</label>
+                        <input type="number" id="personnes" name="personnes" min="1" max="6" required value="2">
+                    </div>
+
+                    <div class="form-groupe">
+                        <label for="message">Demande spéciale (allergies, etc.)</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Précisez ici..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-principal">Confirmer la réservation</button>
+                </form>
+            </div>
+
         </div>
+    </main>
 
-        <div class="contact-card">
-            <span style="font-size: 2rem;">📞</span>
-            <h3 style="margin-bottom: 10px; letter-spacing: 1px;">RÉSERVATIONS</h3>
-            <p style="color: #666; text-transform: none;">+221 77 000 00 00<br>Ouvert 7j/7</p>
+    <footer class="footer-epure">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Restaurant Last Summer</h4>
+                <p>123 Avenue de la Plage<br>75000 Ville d'Été</p>
+            </div>
+            <div class="footer-col">
+                <h4>Horaires</h4>
+                <p>Mardi - Dimanche<br>12h00 - 14h30 | 19h00 - 22h30</p>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <ul class="social-links">
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
         </div>
+    </footer>
 
-        <div class="contact-card">
-            <span style="font-size: 2rem;">✉️</span>
-            <h3 style="margin-bottom: 10px; letter-spacing: 1px;">EMAIL</h3>
-            <p style="color: #666; text-transform: none;">hello@lastsummer.sn<br>Contact Presse</p>
-        </div>
-    </div>
-
-    <footer style="margin-top: 100px;">© 2026 LAST SUMMER — SÉNÉGAL</footer>
 </body>
 </html>
