@@ -578,12 +578,21 @@ button[type="submit"] {
     .contact-formulaire {
         padding: 2rem 1.5rem;
     }
+}
+  .contact-formulaire {
+        padding: 2rem 1.5rem;
+    }
+} /* <-- C'EST ELLE L'ACCOLADE MAGIQUE À RAJOUTER ! */
+
 .contact-section {
     padding: 8rem 0;
-    background-color: #E97D63 !important; /* Un orange corail profond pour faire ressortir le blanc */
-    color: #ffffff !important;
+    background-color: #E67E22 !important;   
+    }
+.contact-section {
+    padding: 8rem 0;
+    background-color: #E67E22 !important; 
+/* ... la suite de ton code ... */
 }
-
 /* On s'assure que tous les textes d'info sont bien en blanc */
 .contact-info h1, 
 .contact-info p, 
@@ -591,7 +600,6 @@ button[type="submit"] {
 .info-bloc p {
     color: #ffffff !important;
 }
-
 /* Le formulaire : on le garde un peu plus clair pour le relief */
 .contact-formulaire {
     background-color: #1e1e1e !important; 
@@ -600,12 +608,10 @@ button[type="submit"] {
     border: 1px solid #333333;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
 /* Les labels du formulaire (Nom, Date, etc.) en blanc */
 .contact-formulaire label {
     color: #ffffff !important;
 }
-
 /* Les champs de saisie (input) */
 .contact-formulaire input, 
 .contact-formulaire select, 
@@ -614,7 +620,6 @@ button[type="submit"] {
     border: 1px solid #444;
     color: white;
 }
-
 /* On garde notre bouton Orange pour le Pep's ! */
 .contact-formulaire button[type="submit"] {
     background-color: #E67E22;
