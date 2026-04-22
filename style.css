@@ -583,7 +583,7 @@ button[type="submit"] {
   padding: 10rem 0; 
   /* J'ai inséré l'Option 1 ici : */
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                    url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2072&auto=format&fit=crop');
+                   <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2072&auto=format&fit=crop>
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
