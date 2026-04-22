@@ -567,6 +567,12 @@ button[type="submit"] {
     width: 100%;
     margin-top: 1rem;
     cursor: pointer;
+    background-color: #E67E22; /* Notre bel orange corail */
+    color: white; /* Le texte en blanc pour bien ressortir */
+    border: none; /* On enlève la bordure par défaut un peu moche */
+    padding: 1rem; /* Un peu d'espace pour que le bouton soit bien cliquable */
+    font-weight: bold;
+    border-radius: 6px; /* On arrondit légèrement les bords */
 }
 
 /* Responsive Mobile */
