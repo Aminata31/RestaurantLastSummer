@@ -603,29 +603,78 @@ button[type="submit"] {
 /* Le Formulaire : Plus "translucide" et avec du relief */
 .contact-formulaire {
   background-color: rgba(255, 255, 255, 0.9); /* Translucide */
-  backdrop-filter: blur(5px); /* Floute l'image derrière le formulaire */
-  color: var(--text-main); /* Le texte dans le formulaire reste noir */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Ombre portée plus forte */
+ /* --- Page Réservation : Design Classique & Chaleureux --- */
+
+.contact-section {
+  padding: 8rem 0;
+  background-color: #FAF6F0; /* Une couleur sable/coquille d'œuf très élégante */
 }
 
-/* Le bouton : LE PEP'S (Orange vibrant) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Textes (On remet en sombre pour la lisibilité sur le fond clair) */
+.contact-info h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #2C3E50; /* Un bleu-gris très foncé, presque noir, très chic */
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p, .info-bloc p {
+  color: #555;
+  line-height: 1.8;
+}
+
+.info-bloc h3 {
+  font-size: 1.2rem;
+  color: #2C3E50;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Le Formulaire : Blanc pur avec une ombre douce */
+.contact-formulaire {
+  background-color: #FFFFFF;
+  padding: 3rem;
+  border-radius: 12px; /* Bords légèrement plus arrondis pour la douceur */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04); /* Ombre très légère pour détacher le formulaire du fond */
+  border: 1px solid #F0EBE1;
+}
+
+/* Le bouton : Le fameux Pep's ! */
 .contact-formulaire button[type="submit"] {
-  background-color: #E67E22; /* Burnt Orange - Pep's mais traditionnel */
+  background-color: #E67E22; /* L'orange chaud du coucher de soleil */
   color: white;
   border: none;
+  padding: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 .contact-formulaire button[type="submit"]:hover {
-  background-color: #D35400; /* Version plus sombre au survol */
+  background-color: #D35400; /* Plus sombre au survol */
+  transform: translateY(-2px); /* Petit effet de soulèvement au survol très moderne */
+  box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3); /* Lueur orange autour du bouton */
 }
 
-/* Responsive (Mobile) - Ajustement pour les petits écrans */
+/* Responsive pour les téléphones */
 @media screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
     .contact-section {
-        background-attachment: scroll; /* Moins lourd sur mobile */
-        padding: 5rem 0;
+        padding: 4rem 1.5rem;
     }
 }
