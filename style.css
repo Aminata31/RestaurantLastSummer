@@ -487,3 +487,95 @@ h1 {
     gap: 2.5rem;
   }
 }
+/* --- Page Contact & Réservation --- */
+.contact-section {
+    padding: 8rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.info-bloc h3 {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.info-bloc p {
+    margin-bottom: 2rem;
+}
+
+/* Le Formulaire */
+.contact-formulaire {
+    background-color: #f9f9f9;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+.form-groupe {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+button[type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* Responsive Mobile */
+@media screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .contact-formulaire {
+        padding: 2rem 1.5rem;
+    }
+}
